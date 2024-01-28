@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Laravel 게시판</a>
+            <a class="navbar-brand" href="{{ route('posts.index') }}">Laravel 게시판</a>
         </div>
     </nav>
 

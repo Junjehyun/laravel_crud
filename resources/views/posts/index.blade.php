@@ -23,5 +23,5 @@
 
     {{ $posts->links() }} <!-- 페이지네이션 링크 출력 -->
 
-    <a href="{{ route('posts.create') }}">새 글 작성</a>
+    <a href="{{ route('posts.create') }}">NEW</a>
 @endsection

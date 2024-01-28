@@ -22,13 +22,16 @@ class PostController extends Controller
     // 게시글 저장
     public function store(Request $request) {
         // 사용자로부터 입력받은 데이터를 유효성 검사함.
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
         ]);
-
          // 게시글 생성
-    Post::create($validatedData);
+    $post = new Post();
+    $post->title = $request->input('title');
+    $post->content = $request->input('content');
+    $post->save();
+
         // 성공 메시지와 함께 게시글 목록 페이지로 리다이렉션
     return redirect()->route('posts.index')->with('success', '게시글이 작성되었습니다.');
 
