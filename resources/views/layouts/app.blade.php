@@ -9,8 +9,9 @@
     <!-- 부트스트랩 CDN 추가 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
         <div class="container">
             <a class="navbar-brand" href="{{ route('posts.index') }}">Laravel 게시판</a>
         </div>
@@ -20,7 +21,7 @@
         @yield('content')
     </div>
 
-    <footer class="bg-dark text-light text-center py-2 fixed-bottom">
+    <footer class="bg-info text-light text-center py-2 fixed-bottom">
         &copy; {{ date('Y') }} Laravel Board. All rights reserved.
     </footer>
 
@@ -28,4 +29,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- 여기에 필요한 기타 스크립트 추가 -->
 </body>
+
 </html>
