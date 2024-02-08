@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="{{ route('posts.index') }}">Laravel 게시판</a>
         </div>
@@ -21,7 +21,7 @@
         @yield('content')
     </div>
 
-    <footer class="bg-info text-light text-center py-2 fixed-bottom">
+    <footer class="bg-primary text-light text-center py-2 fixed-bottom">
         &copy; {{ date('Y') }} Laravel Board. All rights reserved.
     </footer>
 
