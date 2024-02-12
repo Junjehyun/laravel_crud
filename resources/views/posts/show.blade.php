@@ -1,18 +1,34 @@
 <!-- resources/views/posts/show.blade.php -->
-
+{{-- Layout을 가져옴<div class=""></div> --}}
 @extends('layouts.app')
 
 @section('content')
-    <h2>{{ $post->title }}</h2>
-    <p>{{ $post->content }}</p>
-    <small>{{ $post->created_at }}</small>
     <br>
-    <a href="{{ route('posts.edit', $post) }}">수정</a>
-    <form action="{{ route('posts.destroy', $post) }}" method="POST">
+    <br>
+<div class="container text-center mb-5">
+        <h2>{{ $post->title }}</h2>
+    <hr>
+        <p>{{ $post->content }}</p>
+
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<small class="text-black-50">{{ \Carbon\Carbon::parse($post->created_at)->format('Y.m.d H:i:s') }}</small>
+
+<div style="display: flex; justify-content: flex-end;">
+    <a href="{{ route('posts.edit', $post) }}" class="btn btn-warning btn-sm" style="margin-right: 5px;">수정</a>
+    <form action="{{ route('posts.destroy', $post) }}" method="POST" style="margin-right: 5px;">
         @csrf
         @method('DELETE')
-        <button type="submit">삭제</button>
+        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm
+        ('정말 삭제하시겠습니까?')">삭제</button>
     </form>
-    <br>
-    <a href="{{ route('posts.index') }}">뒤로 가기</a>
+    <a href="{{ route('posts.index') }}" class="btn btn-primary btn-sm">목록</a>
+</div>
+
+
+
 @endsection
