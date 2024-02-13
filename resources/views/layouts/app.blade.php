@@ -8,12 +8,25 @@
     <title>@yield('title', 'Laravel Blog')</title>
     <!-- 부트스트랩 CDN 추가 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 부트스트랩 아이콘 CDN 추가 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    body {
+        font-family: JetBrains Mono, 나눔스퀘어; /* 글꼴을 지정. */
+        background-color: whitesmoke;
+    }
+</style>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('posts.index') }}">Laravel 게시판</a>
+            <a class="navbar-brand" href="{{ route('posts.index') }}">
+                <i class="bi bi-braces"></i>
+                Laravel CRUD
+            </a>
         </div>
     </nav>
 
@@ -21,7 +34,7 @@
         @yield('content')
     </div>
 
-    <footer class="bg-primary text-light text-center py-2 fixed-bottom">
+    <footer class="bg-secondary text-light text-center py-2 fixed-bottom">
         &copy; {{ date('Y') }} Laravel Board. All rights reserved.
     </footer>
 

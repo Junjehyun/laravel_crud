@@ -15,7 +15,7 @@
             <a href="{{ route('posts.show', $post )}}"
             style="color: inherit; text-decoration: none;">
             {{-- 게시글 타이틀 표시! --}}
-            <h4 class="mb-2">{{ $post->title }}</h4>
+            <h5 class="mb-2">{{ $post->title }}</h5>
             </a>
             {{-- 게시글 내용 표시! but 표시 안하기로. 주석처리함.--}}
             {{-- <p>{{ $post->content }}</p> --}}
