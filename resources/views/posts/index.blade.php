@@ -24,13 +24,14 @@
         <div>
             <div class="d-inline-block"> <!--상세보기, 수정, 삭제버튼 다 한줄에 배치-->
             <a href="{{ route('posts.show', $post) }}" class="btn btn-info btn-sm">
-                상세보기</a>
+                View</a>
             <a href="{{ route('posts.edit', $post) }}" class="btn btn-warning btn-sm">
-                수정</a>
+                Edit</a>
                 <form action="{{ route('posts.destroy', $post) }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</button>
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('정말 삭제하시겠습니까?')">
+                    Delete</button>
                 </form>
             </div>
         {{-- 게시물이 생성된 날짜와 시간을 표시! --}}
@@ -43,7 +44,8 @@
         <hr style=" margin-top:10px; margin-bottom:10px;">
     @endforeach
 
+    <div class="newArticle" style="text-align: right;">
     {{ $posts->links() }} <!-- 페이지네이션 링크 출력 -->
-    <a href="{{ route('posts.create') }}" class="btn btn-success"
-    style="">NEW</a>
+    <a href="{{ route('posts.create') }}" class="btn btn-success">New Article</a>
+    </div>
 @endsection

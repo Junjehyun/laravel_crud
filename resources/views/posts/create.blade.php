@@ -11,7 +11,7 @@
 
     <div class="card-body">
     <!-- 게시글 작성 폼 -->
-        <form action="{{ route('posts.store') }}" method="POST">
+    <form action="{{ route('posts.store') }}" method="POST">
         @csrf
 
         <div class="form-group">
@@ -24,16 +24,15 @@
         <textarea id="content" name="content" required class="form-control" rows="5" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">작성하기</button>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">작성하기</button>
+            <a href="{{ route('posts.index') }}" class="btn btn-info">돌아가기</a>
+        </div>
+
     </form>
     </div>
 
-            <div class="card-footer">
 
-
-            <a href="{{ route('posts.index') }}" class="btn btn-info">돌아가기</a>
-
-                </div>
             </div>
         </div>
     </div>
