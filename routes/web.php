@@ -57,3 +57,7 @@ Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.upda
 // 특정 ID의 게시글을 삭제한다. '{post}'는 삭제할 게시글의 ID를 나타낸다. 이 라우트에는 'posts.destroy'
 // 라는 이름이 지정되어 있어 나중에 이름을 이용하여 URL을 생성할 수 있다.
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+// 검색을 처리하는 라우트를 정의함.
+// 검색어를 받아 검색을 수행하는 컨트롤러의 메서드로 요청을 보내야한다.
+Route::get('/posts/search', [PostController::class, 'search'])->name('posts.search');

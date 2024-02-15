@@ -27,6 +27,12 @@
                 <i class="bi bi-braces"></i>
                 Laravel CRUD
             </a>
+            {{-- 검색창 --}}
+            <form class="d-flex ms-auto" action="{{ route('posts.search') }}" method="GET">
+                <input class="form-control me-2" type="search" placeholder="검색"
+                name="query" aria-label="Search">
+                <button class="btn btn-light btn-sm" type="submit">검색</button>
+            </form>
         </div>
     </nav>
 

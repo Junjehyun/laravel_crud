@@ -5,11 +5,14 @@
 @section('content')
     <br>
     <br>
-<div class="container text-center mb-5">
-        <h2>{{ $post->title }}</h2>
+<div class="container text-center mb-5 card">
+    <div class="card-body">
+        <h2 class="card-title">{{ $post->title }}</h2>
     <hr>
-        <p>{{ $post->content }}</p>
-
+        <p class="card-text">{{ $post->content }}</p>
+    <br>
+        <p class="card-text"><small class="text-muted">{{ $post->created_at }}</small></p>
+    </div>
 </div>
     <br>
     <br>

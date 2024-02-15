@@ -70,4 +70,18 @@ class PostController extends Controller
         // 성공 메시지와 함께 게시글 목록 페이지로 리다이렉션.
         return redirect()->route('posts.index')->with('success','게시글이 삭제 되었습니다.');
     }
+
+    public function search(Request $request) {
+
+        // 검색어를 받아온다!
+        $search = $request->input('query');
+
+        // 검색어를 포함하는 게시글을 찾는다!
+        $posts = Post::where('title', 'like', '%'.$search,'%')
+                    ->orWhere('content', 'like', '%'.$search,'%')
+                    ->get();
+
+        // 검색 결과를 화면 (뷰)에 전달한다.
+        return view('posts.index', compact('posts'));
+    }
 }

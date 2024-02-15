@@ -7,15 +7,17 @@
     <h2 class="mb-5">게시판</h2>
 </div>
 
-    @foreach ($posts as $post)
+    {{--$posts 배열에서 각각의 게시물에 대해 반복한다. $index 변수는 배열의 현재 인덱스를 나타냄.--}}
+    @foreach ($posts as $index => $post)
+
     <!-- d-flex와 justify-content-between 클래스 추가하여 요소들을 가로로 정렬하고 간격을 벌림 -->
     <div class="mb-1 d-flex justify-content-between align-items-center">
 
         <div>
             <a href="{{ route('posts.show', $post )}}"
             style="color: inherit; text-decoration: none;">
-            {{-- 게시글 타이틀 표시! --}}
-            <h5 class="mb-2">{{ $post->title }}</h5>
+            {{-- 게시글 번호와 타이틀 표시! --}}
+            <h5 class="mb-2">{{ count($posts) - $index }}. {{ $post->title }}</h5>
             </a>
             {{-- 게시글 내용 표시! but 표시 안하기로. 주석처리함.--}}
             {{-- <p>{{ $post->content }}</p> --}}
