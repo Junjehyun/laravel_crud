@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Providers;
+//call paginator
+use Illuminate\Pagination\Paginator;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -20,5 +22,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        Paginator::useBootstrap();
     }
 }

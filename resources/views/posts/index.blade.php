@@ -46,8 +46,17 @@
         <hr style=" margin-top:10px; margin-bottom:10px;">
     @endforeach
 
-    <div class="newArticle" style="text-align: right;">
-    {{ $posts->links() }} <!-- 페이지네이션 링크 출력 -->
-    <a href="{{ route('posts.create') }}" class="btn btn-success">New Article</a>
+<div class="d-flex justify-content-center align-items: center;">
+    {{-- 페이지네이션 --}}
+    <div class="pagination">
+        {{ $posts->links() }}
     </div>
+</div>
+
+<div class="d-flex justify-content-end">
+    <div class="newArticle ml-auto">
+        <a href="{{ route('posts.create') }}" class="btn btn-success">New Article</a>
+    </div>
+</div>
+
 @endsection

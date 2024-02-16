@@ -29,9 +29,9 @@
             </a>
             {{-- 검색창 --}}
             <form class="d-flex ms-auto" action="{{ route('posts.search') }}" method="GET">
-                <input class="form-control me-2" type="search" placeholder="검색"
+                <input class="form-control me-2" type="search" placeholder="Search!"
                 name="query" aria-label="Search">
-                <button class="btn btn-light btn-sm" type="submit">검색</button>
+                <button class="btn btn-light btn-sm" type="submit" style="width: 70px;">Search</button>
             </form>
         </div>
     </nav>
