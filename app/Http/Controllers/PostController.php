@@ -10,7 +10,10 @@ class PostController extends Controller
     // Index 페이지
     public function index() {
         // 최신 게시글을 10개씩 페이지네이션하여 가져온다.
+        // latest = order by created_at desc와 같다!
         $posts = Post::latest()->paginate(10);
+
+        // posts/index.blade.php에서 posts를 사용
         return view('posts.index', compact('posts'));
     }
 
